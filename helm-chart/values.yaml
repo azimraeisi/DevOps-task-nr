@@ -70,5 +70,5 @@ wordpress:
    change-wordpress-url.sh: |
      #!/bin/bash
      chmod +w /bitnami/wordpress/wp-config.php
-     sed -i -r "s|_SERVER\['HTTP_HOST'\] \. '/'|_SERVER\['HTTP_HOST'\] \. '/blog/'|g" /bitnami/wordpress/wp-config.php
+     sed -i -r "s|_SERVER\['HTTP_HOST'\] \. '/'|_SERVER\['HTTP_HOST'\] \. '/wordpress/'|g" /bitnami/wordpress/wp-config.php
      chmod -w /bitnami/wordpress/wp-config.php
