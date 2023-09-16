@@ -1,0 +1,68 @@
+ingress:
+  controller:
+    hostNetwork: true
+    service:
+      type: "ClusterIP"
+mysql:
+  fullnameOverride: "mysql"
+  persistence:
+    enabled: false
+  primary:
+    persistence:
+      enabled: false
+  secondary:
+    persistence:
+      enabled: false
+  auth:
+    rootPassword: "secretpassword"
+    database: app_database
+    username: "admin"
+    password: "admin"
+  service:
+    type: ClusterIP
+phpmyadmin:
+  ingress:
+    enabled: true
+    hostname: "word.raeisi.org"
+    path: "/phpmyadmin(/|$)(.*)"
+    pathType: Prefix
+    ingressClassName: nginx
+    annotations:
+      nginx.ingress.kubernetes.io/configuration-snippet: |
+        rewrite ^(/phpmyadmin)$ $1/ permanent;
+      nginx.ingress.kubernetes.io/rewrite-target: /$2
+      nginx.ingress.kubernetes.io/use-regex: "true"
+  db:
+    host: "mysql"
+    port: "3306"
+  service:
+    type: "ClusterIP"
+  extraEnvVars:
+    - name: "PHPMYADMIN_ABSOLUTE_URI"
+      value: "http://word.raeisi.org/phpmyadmin/"
+wordpress:
+  ingress:
+    enabled: true
+    hostname: "word.raeisi.org"
+    path: "/wordpress(/|$)(.*)"
+    pathType: Prefix
+    ingressClassName: nginx
+    annotations:
+      nginx.ingress.kubernetes.io/configuration-snippet: |
+        rewrite ^(/wordpress)$ $1/ permanent;
+      nginx.ingress.kubernetes.io/rewrite-target: /$2
+      nginx.ingress.kubernetes.io/use-regex: "true"
+  persistence:
+    enabled: false
+  mariadb:
+    enabled: false
+  externalDatabase:
+    host: "mysql"
+    port: 3306
+    user: admin
+    password: admin
+    database: app_database
+  wordpressUsername: admin
+  wordpressPassword: admin
+  service:
+    type: ClusterIP

@@ -1,0 +1,26 @@
+apiVersion: v2
+appVersion: 0.0.1
+dependencies:
+  - name: ingress-nginx
+    repository: https://kubernetes.github.io/ingress-nginx
+    version: 4.7.2
+    alias: ingress
+  - name: mysql
+    repository: https://charts.bitnami.com/bitnami
+    version: 9.12.2
+  - name: phpmyadmin
+    repository: https://charts.bitnami.com/bitnami
+    version: 12.1.1
+  - name: wordpress
+    repository: https://charts.bitnami.com/bitnami
+    version: 17.1.8
+description: bring up wordpress +  phpmyadmin + phpmyadmin wiht not persistance data just for testing purposes.
+maintainers:
+- name: Azim Raeisi
+  url: https://www.linkedin.com/in/azimraeisi/
+name: wordpress+phpmyadmin+mysql
+sources:
+  - https://artifacthub.io/packages/helm/bitnami/wordpress
+    https://artifacthub.io/packages/helm/bitnami/phpmyadmin
+    https://artifacthub.io/packages/helm/bitnami/mysql
+version: 0.0.1
