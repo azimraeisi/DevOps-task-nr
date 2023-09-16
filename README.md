@@ -20,5 +20,6 @@ enter in your terminal:
 ```bash
 $ ssh root@your-server-ip
 $ git clone https://github.com/azimraeisi/DevOps-task-nr
-$ bash install.sh
+$ bash install.sh &
 ```
+It takes 10~15 minutes, execute the script and have a cup of coffee till the installation is finished.
