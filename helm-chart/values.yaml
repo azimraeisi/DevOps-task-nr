@@ -14,16 +14,16 @@ mysql:
     persistence:
       enabled: false
   auth:
-    rootPassword: $MysqlrootPassword
+    rootPassword: "$MysqlrootPassword"
     database: app_database
-    username: $MysqlUsername
-    password: $MysqlPassword
+    username: "$"MysqlUsername"
+    password: "$MysqlPassword"
   service:
     type: ClusterIP
 phpmyadmin:
   ingress:
     enabled: true
-    hostname: $YourDomainURL
+    hostname: "$YourDomainURL"
     path: "/phpmyadmin(/|$)(.*)"
     pathType: Prefix
     ingressClassName: nginx
@@ -39,11 +39,11 @@ phpmyadmin:
     type: "ClusterIP"
   extraEnvVars:
     - name: "PHPMYADMIN_ABSOLUTE_URI"
-      value: "http://$YourDomainURL/phpmyadmin/"
+      value: "http://"$YourDomainURL"/phpmyadmin/"
 wordpress:
   ingress:
     enabled: true
-    hostname: $YourDomainURL
+    hostname: "$YourDomainURL"
     path: "/wordpress(/|$)(.*)"
     pathType: Prefix
     ingressClassName: nginx
@@ -59,10 +59,10 @@ wordpress:
   externalDatabase:
     host: "mysql"
     port: 3306
-    user: admin
-    password: admin
+    user: "admin"
+    password: "admin"
     database: app_database
-  wordpressUsername: $wordpressUsername
-  wordpressPassword: $wordpressPassword
+  wordpressUsername: "$wordpressUsername"
+  wordpressPassword: "$wordpressPassword"
   service:
     type: ClusterIP
