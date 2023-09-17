@@ -1,11 +1,12 @@
-# K8s single node and install wordpress via helm
+# k8s single node and install wordpress+mysql+phpmyadmin via helm
 ### What is the goal?
 
 This repository contains the necessary tools and configurations to set up a Kubernetes cluster on a single node (Control Plane + Worker) using Kubespray, and to deploy a WordPress application, MySQL, PhpMyAdmin and nginx-ingress using Helm with one click without a load balancer in a VPS with one public IP.
 
-Access to WordPress URL: https://yourdomain.com/wordpress
-Access to phpmyadmin URL: https://yourdomain.com/wordpress
-phpmyadmin: https://yourdomain.com/dbadmin
+Access to wordpress URL: https://yourdomain.com/wordpress
+Access to wordpress URL: https://yourdomain.com/wordpress/wp-admin
+Access to phpmyadmin URL: https://yourdomain.com/dbadmin
+
 
 ### Warning:
 Important: This setup uses non-persistent storage. Consequently, any data saved will be lost after a restart.
