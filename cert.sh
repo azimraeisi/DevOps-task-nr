@@ -1,4 +1,5 @@
 #Install the cert-manager Helm chart (More details:https://cert-manager.io/docs/installation/)
+source vars.txt
 helm repo add jetstack https://charts.jetstack.io
 helm repo update
 helm install \
@@ -52,8 +53,8 @@ EOF
 kubectl apply -f request-cert.yaml
 
 sleep 120
-kubectl patch ingress wordpress-app-phpmyadmin --type='json' -p='[{"op": "add", "path": "/spec/tls", "value": [{"hosts":["word.raeisi.org"], "secretName":"my-certificate-tls"}]}]'
-kubectl patch ingress wordpress-app --type='json' -p='[{"op": "add", "path": "/spec/tls", "value": [{"hosts":["word.raeisi.org"], "secretName":"my-certificate-tls"}]}]'
+kubectl patch ingress wordpress-app-phpmyadmin --type='json' -p='[{"op": "add", "path": "/spec/tls", "value": [{"hosts":["$YourDomainURL"], "secretName":"my-certificate-tls"}]}]'
+kubectl patch ingress wordpress-app --type='json' -p='[{"op": "add", "path": "/spec/tls", "value": [{"hosts":["$YourDomainURL"], "secretName":"my-certificate-tls"}]}]'
 
 
 
