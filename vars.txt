@@ -1,5 +1,4 @@
-YourDomainURL=word.raeisi.org
-phpmyadminPage=http://word.raeisi.org
+YourDomainURL=azim-raeisi-nl-rg2.maxtld.dev
 wordpressUsername="admin"
 wordpressPassword="admin@@__ADMIN"
 MysqlrootPassword="root@@__ROOT"
