@@ -1,4 +1,5 @@
 YourDomainURL=word.raeisi.org
+phpmyadminPage=http://word.raeisi.org
 wordpressUsername="admin"
 wordpressPassword="admin@@__ADMIN"
 MysqlrootPassword="root@@__ROOT"
