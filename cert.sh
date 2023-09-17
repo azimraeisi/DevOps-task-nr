@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 #Install the cert-manager Helm chart (More details:https://cert-manager.io/docs/installation/)
 source vars.txt
 helm repo add jetstack https://charts.jetstack.io
