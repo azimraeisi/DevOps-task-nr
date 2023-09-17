@@ -4,7 +4,8 @@ helm dependency build
 
 helm install wordpress-app \
 --set phpmyadmin.ingress.hostname=${YourDomainURL} \
---set phpmyadmin.extraEnvVars.value=https://$YourDomainURL \
+--set phpmyadmin.extraEnvVars[0].name=PHPMYADMIN_ABSOLUTE_URI \
+--set phpmyadmin.extraEnvVars[0].value=https://$YourDomainURL \
 --set mysql.auth.username=${wordpressUsername} \
 --set mysql.auth.password=${wordpressPassword} \
 --set mysql.auth.rootPassword=${MysqlrootPassword} \
