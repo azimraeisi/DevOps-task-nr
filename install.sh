@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+sudo apt update && \
+sudo apt install curl -y
 
 sudo bash install-k8s.sh
 sudo bash install-helm.sh
