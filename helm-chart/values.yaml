@@ -24,7 +24,7 @@ phpmyadmin:
   ingress:
     enabled: true
     hostname: 
-    path: "/phpmyadmin(/|$)(.*)"
+    path: "/dbadmin(/|$)(.*)"
     pathType: Prefix
     ingressClassName: nginx
     annotations:
