@@ -1,6 +1,6 @@
 YourDomainURL=word.raeisi.org
 wordpressUsername=admin
-wordpressPassword=admin
-MysqlrootPassword="secretpassword"
+wordpressPassword=admin@@__ADMIN
+MysqlrootPassword="root@@__ROOT"
 MysqlUsername="admin"
-MysqlPassword="admin"
+MysqlPassword="admin@@__ADMIN"
