@@ -14,22 +14,22 @@ mysql:
     persistence:
       enabled: false
   auth:
-    rootPassword: "secretpassword"
-    database: app_database
-    username: "admin"
-    password: "admin"
+    rootPassword: 
+    database: wordpress_app_database
+    username: 
+    password: 
   service:
     type: ClusterIP
 phpmyadmin:
   ingress:
     enabled: true
-    hostname: "word.raeisi.org"
+    hostname: 
     path: "/phpmyadmin(/|$)(.*)"
     pathType: Prefix
     ingressClassName: nginx
     annotations:
       nginx.ingress.kubernetes.io/configuration-snippet: |
-        rewrite ^(/phpmyadmin)$ $1/ permanent;
+        rewrite ^(/dbadmin)$ $1/ permanent;
       nginx.ingress.kubernetes.io/rewrite-target: /$2
       nginx.ingress.kubernetes.io/use-regex: "true"
   db:
@@ -37,13 +37,13 @@ phpmyadmin:
     port: "3306"
   service:
     type: "ClusterIP"
-  extraEnvVars:
-    - name: "PHPMYADMIN_ABSOLUTE_URI"
-      value: "http://word.raeisi.org/phpmyadmin/"
+#  extraEnvVars:
+#    - name: "PHPMYADMIN_ABSOLUTE_URI"
+#      value: "http://word.raeisi.org/phpmyadmin/"
 wordpress:
   ingress:
     enabled: true
-    hostname: "word.raeisi.org"
+    hostname: 
     path: "/wordpress(/|$)(.*)"
     pathType: Prefix
     ingressClassName: nginx
@@ -59,11 +59,11 @@ wordpress:
   externalDatabase:
     host: "mysql"
     port: 3306
-    user: admin
-    password: admin
-    database: app_database
-  wordpressUsername: admin
-  wordpressPassword: admin
+    user: 
+    password: 
+    database: wordpress_app_database
+  wordpressUsername: 
+  wordpressPassword: 
   service:
     type: ClusterIP
   customPostInitScripts:
@@ -72,3 +72,9 @@ wordpress:
      chmod +w /bitnami/wordpress/wp-config.php
      sed -i -r "s|_SERVER\['HTTP_HOST'\] \. '/'|_SERVER\['HTTP_HOST'\] \. '/wordpress/'|g" /bitnami/wordpress/wp-config.php
      chmod -w /bitnami/wordpress/wp-config.php
+
+  link-wp: |
+     #!/bin/bash
+     ln -s /opt/bitnami/wordpress /opt/bitnami/wordpress/wordpress
+     
+
