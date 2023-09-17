@@ -3,5 +3,7 @@
 sudo bash install-k8s.sh
 sudo bash install-helm.sh
 
-cd helm-chart
-sudo bash install-helm-packages.sh
+sudo bash helm-chart/install-helm-packages.sh
+
+##install certbot and update ingress
+sudo bash bash.sh
