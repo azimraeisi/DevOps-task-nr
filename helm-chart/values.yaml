@@ -39,7 +39,7 @@ phpmyadmin:
     type: "ClusterIP"
   extraEnvVars:
     - name: "PHPMYADMIN_ABSOLUTE_URI"
-      value: 
+      value: http://azim-raeisi-nl-rg2.maxtld.dev
 wordpress:
   ingress:
     enabled: true
