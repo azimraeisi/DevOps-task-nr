@@ -46,9 +46,9 @@ spec:
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer
-  commonName: word.raeisi.org
+  commonName: $YourDomainURL
   dnsNames:
-  - word.raeisi.org
+  - $YourDomainURL
 
 EOF
 
