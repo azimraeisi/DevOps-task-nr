@@ -53,8 +53,12 @@ EOF
 kubectl apply -f request-cert.yaml
 
 sleep 120
-kubectl patch ingress wordpress-app-phpmyadmin --type='json' -p='[{"op": "add", "path": "/spec/tls", "value": [{"hosts":["$YourDomainURL"], "secretName":"my-certificate-tls"}]}]'
-kubectl patch ingress wordpress-app --type='json' -p='[{"op": "add", "path": "/spec/tls", "value": [{"hosts":["$YourDomainURL"], "secretName":"my-certificate-tls"}]}]'
+
+kubectl patch ingress wordpress-app-phpmyadmin --type='json' -p="[{\"op\": \"add\", \"path\": \"/spec/tls\", \"value\": [{\"hosts\":[\"$YourDomainURL\"], \"secretName\":\"my-certificate-tls\"}]}]"
+kubectl patch ingress wordpress-app --type='json' -p="[{\"op\": \"add\", \"path\": \"/spec/tls\", \"value\": [{\"hosts\":[\"$YourDomainURL\"], \"secretName\":\"my-certificate-tls\"}]}]"
+
+
+
 
 
 
