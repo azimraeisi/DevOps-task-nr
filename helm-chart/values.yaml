@@ -37,9 +37,9 @@ phpmyadmin:
     port: "3306"
   service:
     type: "ClusterIP"
-#  extraEnvVars:
-#    - name: "PHPMYADMIN_ABSOLUTE_URI"
-#      value: "http://word.raeisi.org/phpmyadmin/"
+  extraEnvVars:
+    - name: "PHPMYADMIN_ABSOLUTE_URI"
+      value: 
 wordpress:
   ingress:
     enabled: true
