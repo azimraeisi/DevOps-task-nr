@@ -6,4 +6,4 @@ sudo bash install-helm.sh
 sudo bash helm-chart/install-helm-packages.sh
 
 ##install certbot and update ingress
-sudo bash bash.sh
+sudo bash cert.sh
