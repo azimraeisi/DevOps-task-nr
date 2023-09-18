@@ -22,7 +22,8 @@ enter in your terminal:
 
 ```bash
 $ ssh root@your-server-ip
-$ git clone https://github.com/azimraeisi/DevOps-task-nr
+$ git clone https://github.com/azimraeisi/k8s-singlenode-wordpress
+$ cd k8s-singlenode-wordpress
 $ bash install.sh &
 ```
 It takes 10~15 minutes. Execute the script and have a cup of coffee till the installation is finished.
