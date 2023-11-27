@@ -22,7 +22,7 @@ enter in your terminal:
 
 ```bash
 $ ssh root@your-server-ip
-$ git clone https://github.com/azimraeisi/k8s-singlenode-wordpress
+$ git clone https://github.com/samraeisi/k8s-singlenode-wordpress
 $ cd k8s-singlenode-wordpress
 $ bash install.sh &
 ```
